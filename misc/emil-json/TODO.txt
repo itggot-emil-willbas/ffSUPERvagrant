@@ -1,0 +1,2 @@
+1. Skapa kommentarsskapar input + button
+2. Samla in kommentarer + samlingsnamn (bara konstr?)

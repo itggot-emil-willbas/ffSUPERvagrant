@@ -1,0 +1,295 @@
+/* min css jao*/
+
+/* mina knappar*/
+
+
+
+.floatleft {
+	display:block;
+	
+}
+
+.divknapp {
+	/*height:100px;*/
+	/*width:112px;*/
+	width:10%;
+	background:white;
+	margin:2px;
+	/*text-align:center;*/
+	padding:5px;
+	border-radius:3px;
+	float:left;
+	position:relative;
+	font-size:0.85em;
+	height:81px;
+	overflow:hidden;
+	border: 1px dotted rgba(226,226,226,0.4);
+	
+	
+	}
+	
+
+	
+.divknapp:hover {
+	background:rgba(243,238,238,1);
+	overflow:visible;
+	
+	
+}
+
+.divknapp:active {
+	background:rgba(243,238,238,0.95);
+}
+
+
+
+ #copyButton {
+	background:rgba(255,255,255,.4);
+	-webkit-border-radius:10px;
+	border-radius:0px;
+	border:none;
+	font-weight:300;
+	color:white;
+	float:right;
+	margin-top:10px;
+	font-size:1.2em;
+	padding:10px;
+}
+
+#eraseButton {
+	-webkit-border-radius:10px;
+	border-radius:0px;
+	border:none;
+	font-weight:300;
+	color:white;
+	float:right;
+	margin-top:10px;
+	font-size:1.2em;
+	}
+
+ #copyButton:hover, #addPosButton:hover {
+	color:white;
+	background:#45d89b;
+}
+
+#eraseButton:hover, #addKonstrButton:hover, #empty:hover {
+	color:white ;
+	background:#e65045;
+}
+
+#copyButton {
+	background:white;
+	color:#45d89b;
+	font-size:1.2em;
+}
+
+#eraseButton, #addPosButton, #addKonstrButton, #empty {
+	background:white;
+	border-radius:0px;
+	border:none;
+	font-weight:300;
+	color:#e65045;
+	padding:10px;
+	font-size:1.2em;
+	border:1px dashed rgba(226,226,226,0.4);
+	}
+	
+#addPosButton, #addKonstrButton {
+	font-size:1.2em;
+	box-sizing:border-box;
+	
+	
+	}
+
+#empty {
+	color:rgba(226,226,226,0.4);
+	background:white;
+	display:block;
+	float:right;
+	margin-bottom:10px;
+	}	
+
+	
+#addPosButton {
+	background:white;
+	color:#45d89b;
+	}	
+
+.eraseThis {
+	position:absolute;
+	top:2px;
+	right:2px;
+	border:none;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	z-index:100;
+	height:12px;
+	width:10px;
+	/*opacity:0.3;*/
+}
+.eraseThis:hover {
+	background:#e65045;
+
+}
+
+#save, #load {
+	float:left;
+	background:white;
+	border-radius:0px;
+	border:none;
+	font-weight:300;
+	color:#329fd8;
+	font-size:1.2em;
+	padding:10px;
+	border:1px solid #329fd8;
+	margin-top:10px;
+	
+	}
+	
+#save:hover, #load:hover {
+	background:#329fd8;
+	color:white;
+	}
+    
+.bra {
+    border-bottom:solid 5px #45d89b;
+}
+
+.konstr {
+    border-bottom:solid 5px  #e65045;
+}
+
+
+/*Min output*/
+
+#op {
+	width:100%;
+	min-height:100px;
+	background:rgba(226,226,226,0.4);
+	display:block;
+	border:black 1px solid;
+	border-radius:10px;
+	/*clear:both;*/
+	padding:5px;
+	border:none;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	overflow:hidden;
+	margin:auto;
+	margin-top:10px;
+	position:relative;
+}
+
+
+#extraop{
+	width:75%;
+	height:400px;
+	background:rgba(226,226,226,1.00);
+	display:block;
+	border:black 1px solid;
+	border-radius:10px;
+	clear:both;
+	padding:5px;
+}
+/*spaceforbutton*/
+
+#spaceforbuttons {
+	width:100%;
+	min-height:100px;
+	background:rgba(226,226,226,0.4);
+	padding:5px;
+	float:left;
+	margin-bottom:10px;
+	margin-top:40px;
+	position:relative;
+	
+	
+	}
+	
+/*Startup tutorial*/
+.guide_one, .guide_two {
+	position:absolute;
+	top:20px;
+	left:10%;
+	z-index:-2;
+	font-size:1.5em !important;
+	color:rgba(50, 159, 216, 0);
+	
+	}
+	
+.guide_one	{
+	-webkit-animation:bluetutorial 9s 1s linear;
+	-moz-animation:bluetutorial 9s 1s linear;
+	-ms-animation:bluetutorial 9s 1s linear;
+	-o-animation:bluetutorial 9s 1s linear;
+	animation:bluetutorial 9s 1s linear;
+}
+	
+
+	
+.guide_one_right {
+	position:absolute;
+	top:20px;
+	right:10%;
+	z-index:-2;
+	font-size:1.5em !important;
+	color:rgba(50, 159, 216, 0);
+	-webkit-animation:bluetutorial 7s 3s linear;
+	-moz-animation:bluetutorial 7s 3s linear;
+	-ms-animation:bluetutorial 7s 3s linear;
+	-o-animation:bluetutorial 7s 3s linear;
+	animation:bluetutorial 7s 3s linear;
+	}
+	
+.guide_two {
+	color:rgba(69, 216, 155, 0);
+	left:40%;
+	-webkit-animation:bluetutorial 5s 5s linear;
+	-moz-animation:bluetutorial 5s 5s linear;
+	-ms-animation:bluetutorial 5s 5s linear;
+	-o-animation:bluetutorial 5s 5s linear;
+	animation:bluetutorial 5s 5s linear;
+	}
+		
+/* Guide animation + media queries*/
+
+@media screen and (max-width:767px) {
+	.divknapp {
+		width:20%;
+		}
+	}
+	
+@-webkit-keyframes bluetutorial {
+	0% {color:rgba(50, 159, 216, 0);}
+	10% {color:rgba(50, 159, 216, 0.9);}
+	95% {color:rgba(50, 159, 216, 0.9);}
+	100% {color:rgba(50, 159, 216, 0);}
+	}
+	
+@-moz-keyframes bluetutorial {
+	0% {color:rgba(50, 159, 216, 0);}
+	10% {color:rgba(50, 159, 216, 0.9);}
+	95% {color:rgba(50, 159, 216, 0.9);}
+	100% {color:rgba(50, 159, 216, 0);}
+	}
+	
+/*@-ms-keyframes bluetutorial {
+	0% {color:rgba(50, 159, 216, 0);}
+	10% {color:rgba(50, 159, 216, 0.9);}
+	95% {color:rgba(50, 159, 216, 0.9);}
+	100% {color:rgba(50, 159, 216, 0);}
+	}*/
+	
+@-o-keyframes bluetutorial {
+	0% {color:rgba(50, 159, 216, 0);}
+	10% {color:rgba(50, 159, 216, 0.9);}
+	95% {color:rgba(50, 159, 216, 0.9);}
+	100% {color:rgba(50, 159, 216, 0);}
+	}
+	
+@keyframes bluetutorial {
+	0% {color:rgba(50, 159, 216, 0);}
+	10% {color:rgba(50, 159, 216, 0.9);}
+	95% {color:rgba(50, 159, 216, 0.9);}
+	100% {color:rgba(50, 159, 216, 0);}
+	}
