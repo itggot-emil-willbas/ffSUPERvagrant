@@ -1,53 +1,78 @@
+<aside class="savings">
+    <section id="hanterasamlingar">
+        <form method="GET" action="/comments/?">
+            
+            <select id="course_select" name="course-select">
+            <% i = 0 %>
+            <% for banan in kurser do%>
+            <option value=<%= banan[0] %>><%= banan[1] %></option>
+            <% i += 1 %>
+            <% end %>
+            </select>
+
+            <select id="collection_select" name="collection-select">
+            
+        
+
+            </select>
+
+            <input type="submit" value="Hämta Samling" class="load"></input>
+            <button id="clicker" class="save">Spara samling</button>
+        </form>
+    </section>
+<nav><i class="fa fa-floppy-o iconsize relpos"></i><p>webtools / fast forward</p></nav>
+    
+</aside>
+
 <main>
+<!--popup-->
+<div id="popup" class="hidden">
     <section id="hanterasamlingleft">
         <form id="mittForm" onsubmit="return false"> <!-- Mitt formulär -->
-          <input id="kommentarsinput" type="text" value="Skriv din kommentar här" onfocus="this.value='';" width="200px">
+          <textarea id="kommentarsinput" type="text" value="Skriv din kommentar här" onfocus="this.value='';"></textarea>
           <input id="addPosButton" class="buttonSize" type="button" value="Ny knapp">
           <input id="addKonstrButton" class="buttonSize" type="button" value="Ny knapp">
         </form>
     </section>
+</div>
 
-    <button id="clicker">Skicka JSON</button>
-
-    
-    
-    
-    <section id="spaceforbuttons">
-        <h1 class="guide_one"><i class="fa fa-hand-o-up fa-4 digleft"></i>Skapa egna kommentarsknappar!</h1>
-        <h1 class="guide_one_right">...eller ladda samling.<i class="fa fa-hand-o-up fa-4 digright"></i></h1>
-    </section>
-    
-    <input id="empty" class="buttonSize" type="button" value="Rensa knappar">
-    
     <output id="op">
-    <h1 class="guide_two">Här skapas din textmassa.</h1>
-        <p id="opp"></p>
+        <!--<h1 class="guide_two">Här skapas din textmassa.</h1>-->
+        <%#comments = ""%>
+        <%#if !comments%>
+            <%#= "Inga comments"%>
+            <%#else%>
+            <%#= comments%>
+        <%#end%>
+            <p id="opp"></p>
     </output>
     
     <button id="copyButton" class="buttonSize">Kopiera text</button>
     <button id="eraseButton" class="buttonSize">Ta bort text</button>
+
+    <section id="spaceforbuttons">
+        <!--<h1 class="guide_one"><i class="fa fa-hand-o-up fa-4 digleft"></i>Skapa egna kommentarsknappar!</h1>-->
+        <!--<h1 class="guide_one_right">...eller ladda samling.<i class="fa fa-hand-o-up fa-4 digright"></i></h1>-->
+        <!--Iterera igenom nya knappar med classer a la javascript. Färgen måste komma med också... -->
+        
+        <div class="divknapp buttonmaker"><p>Ny kommentar</p></div>
+
+
+
+        <% for comment in comments do%>
+        <% color = ""%>
+            <%if comment[1] == "green"%>
+                <%color = "bra"%>
+                <%else%>
+                <%color = "konstr"%>
+            <% end %>
+       <div class="divknapp <%= color %>"><button class="eraseThis" data-clicked="no"></button><p class="nytext"><%=comment[0]%></p></div>
+        
+        <% end %>
+    </section>
+    
+    <input id="empty" class="buttonSize" type="button" value="Rensa knappar">
+    
+    
       
 </main>
-
-<aside>
-
-<p>Bananpaj 3000</p>
-<form method="GET" action="/comments/?">
-    
-    <select id="course_select" name="course-select">
-    <% i = 0 %>
-    <% for banan in kurser do%>
-    <option value=<%= banan[0] %>><%= banan[1] %></option>
-    <% i += 1 %>
-    <% end %>
-    </select>
-
-    <select id="collection_select" name="collection-select">
-
-    </select>
-
-    <input type="submit" value="Hämta Samling"></input>
-
-</form>
-
-</aside>

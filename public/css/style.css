@@ -1,4 +1,186 @@
 /* min css jao*/
+body {
+	font-family: 'Fira Sans', sans-serif !important;
+	font-weight:700;
+	background-color:rgba(226,226,226,0.4);
+	color:#5D5D5D;
+	
+}
+
+/*Popup*/
+#popup {
+	width:100vw;
+	height:100vh;
+	background:rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top:0;
+	left:0;
+	display:grid;
+	justify-content: center;
+	align-content: center;
+	z-index: 100;
+}
+
+#hanterasamlingleft {
+	width:60vw;
+	height:50vh;
+	background:white;
+
+}
+#mittForm {
+	width:100%;
+	height:100%;
+}
+
+
+
+#kommentarsinput{
+	width:100%;
+	box-sizing: border-box;
+	padding:10px;
+	font-size:1.2em;
+	font-family: 'Fira Sans', sans-serif !important;
+	font-weight:300;
+	color:grey;
+	margin:0px;
+	
+	height:90%;
+	}
+
+.hidden {
+	display: none !important;
+}
+
+#addPosButton, #addKonstrButton{
+	width:50%;
+	height:10%;
+	box-sizing:border-box;
+	float:left;
+	background:white;
+	border-radius:0px;
+	border:none;
+	font-weight:300;
+	color:#e65045;
+	padding:10px;
+	font-size:1.2em;
+	border:1px dashed rgba(226,226,226,0.4);
+	}
+	
+#addPosButton, #addKonstrButton {
+	font-size:1.2em;
+	box-sizing:border-box;
+	
+	
+	}
+#addPosButton {
+	background:white;
+		color:#45d89b;
+		}
+
+
+
+
+/* Aside */
+
+.clear {
+	clear:both;
+	}
+
+main {
+	width:100%;
+	
+
+	}
+aside.savings {
+	/*width:400px;*/
+	background:rgba(0,0,0,0.10);
+	position:absolute;
+	top:0;
+	right:-220px;
+	z-index:999;
+	transition:all 0.3s linear;
+	
+}
+
+nav {
+	box-sizing:border-box;
+	height:auto;
+	width:auto;
+	padding-left:10px;
+	padding-top:10px;
+	
+	position:fixed;
+	top:0px;
+	left:0px;
+
+	}
+
+nav p {
+	padding:5px 0px 5px 30px;
+	margin-top:5px;
+}
+
+
+	
+.open {
+	position:absolute;
+	right:0px !important;
+	background:black !important;
+	transition:all 0.3s linear;
+}
+
+
+
+#hanterasamlingar {
+/*height:50px;*/
+	float:right;
+	/*background:white;*/
+	padding:10px;
+	border-radius:3px 0 0 3px;
+
+	}
+
+#hanterasamlingar {
+	width:200px;
+	font-size:0.8em;
+	}
+	
+#hanterasamlingleft {
+	border-radius: 0 3px 3px 0 ;
+	float:left;
+	/*border:1px #329fd8 dotted;*/
+	}
+
+img {
+	width:50px;
+	height:50px;
+	color:red;
+	z-index:1000;
+}
+
+.relpos {
+	position:absolute;
+}
+
+.iconsize {
+	font-size:2em;
+	color:#329fd8;
+	}
+
+
+
+/*selects*/
+
+select{
+	padding:10px;
+	font-size:1.2em;
+	font-family: 'Fira Sans', sans-serif !important;
+	font-weight:300;
+	color:rgba(50, 159, 216, 1.0);
+	border:3px solid rgba(50, 159, 216, 1.0);
+	margin:0px;
+	margin-right:10px;
+	}
 
 /* mina knappar*/
 
@@ -27,6 +209,16 @@
 	
 	
 	}
+
+.buttonmaker {
+	border:1px dotted darkgrey;
+	background:lightgrey;
+	width:10%;
+	font-size:0.85em;
+	height:81px;
+	justify-content: flex-end;
+	align-content:center;
+}
 	
 
 	
@@ -83,7 +275,7 @@
 	font-size:1.2em;
 }
 
-#eraseButton, #addPosButton, #addKonstrButton, #empty {
+#eraseButton, #empty {
 	background:white;
 	border-radius:0px;
 	border:none;
@@ -93,28 +285,15 @@
 	font-size:1.2em;
 	border:1px dashed rgba(226,226,226,0.4);
 	}
-	
-#addPosButton, #addKonstrButton {
-	font-size:1.2em;
-	box-sizing:border-box;
-	
-	
-	}
 
 #empty {
-	color:rgba(226,226,226,0.4);
+	color:#e65045;
 	background:white;
 	display:block;
 	float:right;
 	margin-bottom:10px;
 	}	
-
 	
-#addPosButton {
-	background:white;
-	color:#45d89b;
-	}	
-
 .eraseThis {
 	position:absolute;
 	top:2px;
@@ -132,23 +311,23 @@
 
 }
 
-#save, #load {
+.save, .load {
 	float:left;
-	background:white;
+	background:black;
 	border-radius:0px;
 	border:none;
-	font-weight:300;
-	color:#329fd8;
+	font-weight:400;
+	color:white;
 	font-size:1.2em;
 	padding:10px;
-	border:1px solid #329fd8;
+	border:1px solid #ffffff;
 	margin-top:10px;
 	
 	}
 	
-#save:hover, #load:hover {
-	background:#329fd8;
-	color:white;
+.save:hover, .load:hover {
+	background:white;
+	color:black;
 	}
     
 .bra {
@@ -176,7 +355,7 @@
 	border-radius:10px;
 	overflow:hidden;
 	margin:auto;
-	margin-top:10px;
+	margin-top:80px;
 	position:relative;
 }
 

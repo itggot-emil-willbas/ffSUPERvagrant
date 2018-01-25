@@ -13,6 +13,11 @@
 # Used by dotenv library to load environment variables.
 # .env
 
+#Tillagda 25jan
+.vagrant/**
+Vagrantfile
+Gemfile.lock
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history

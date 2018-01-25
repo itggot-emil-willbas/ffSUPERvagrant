@@ -1,9 +1,43 @@
-$(document).ready(function () {
+
+
+$(document).ready(function() {
+
+populate_select();
+
+
+    $(window).on('resize load', function(e){
+    
+    $('.savings').css({
+        height: $(window).height()
+        });
+    });
+
+    $(document).on('click', 'nav, #load', function(){
+        $('.savings').toggleClass('open');
+        });
 
 
 
-    $("#course_select").on('change',function () {
-            var val = $(this).val();
+    function populate_select() {
+        
+        var val = $("#course_select").val();
+        $("#collection_select").empty();
+            $.get("/collections/" + val , function(response){
+            parsed = JSON.parse(response)
+            var i = 0
+            while (i < parsed.object_first_key.length) {
+                $("#collection_select").append("<option value=" + parsed.object_first_key[i][0] + ">" + parsed.object_first_key[i][1] + "</option>" );
+                i++;
+            };
+        });
+    };
+
+
+    
+
+
+    $("#course_select").on('change',function() {
+        var val = $(this).val();
         $("#collection_select").empty();
         $.get("/collections/" + val , function(response){
             parsed = JSON.parse(response)
@@ -15,9 +49,15 @@ $(document).ready(function () {
         });
     });
 
+//Toogle popup(comments)
+$(document).on('click', '.buttonmaker, #addPosButton, #addKonstrButton', function(){
+	$("#popup").toggleClass('hidden');
+	});
+
 
 //Add green comment/div
     $('#addPosButton').click(function(){
+        
 		//leta fram rätt text
 		var komtext = $('#kommentarsinput').val()+'. ';
 		//lägg till den i <output>
@@ -40,6 +80,15 @@ $(document).ready(function () {
              $(this).closest('div').remove();
              $('#op:last-child').remove(); 
     });
+
+//Remove text
+$('#eraseButton').click(function() {
+    $('#opp').empty();
+});
+
+$('#empty').click(function() {	
+    $('.divknapp').remove();
+});
 
 //JSON test. Tänk på att varna om det redan finns ett collectionname med samma namn
 
@@ -90,7 +139,33 @@ $("#clicker").click(function(){
         function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
         });
+
+        return false;
+
+    } else {
+        //Nej kör en route som kollar aktuell course-select!
+        
+        /*var url = window.location.href; 
+        alert(url);
+        window.location.href(url);*/
+        return false;
     };
+});
+
+/* Knappar */
+$("#spaceforbuttons").on("click",".divknapp",function(event){
+    
+    if (!$(event.target).is('.eraseThis')){	
+        var flyttext = $(this).text() + " ";
+        $('#opp').append(flyttext);
+    }
+});	
+
+$('#copyButton').click(function(e) {
+    console.log(e);
+    var hejhej = $('#opp').text();
+    window.prompt("Copy to clipboard: Ctrl + C, Enter",hejhej);
+
 });
 
 
