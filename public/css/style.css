@@ -25,11 +25,21 @@ body {
 	width:60vw;
 	height:50vh;
 	background:white;
-
+	position:relative;
 }
+
+#killpopup {
+	position:absolute;
+	top:15px;
+	right:15px;
+	width:35px;
+}
+
 #mittForm {
 	width:100%;
 	height:100%;
+	
+	
 }
 
 
@@ -37,14 +47,15 @@ body {
 #kommentarsinput{
 	width:100%;
 	box-sizing: border-box;
-	padding:10px;
-	font-size:1.2em;
+	padding:4em;
+	font-size:1.4em;
 	font-family: 'Fira Sans', sans-serif !important;
-	font-weight:300;
+	font-weight:500;
 	color:grey;
 	margin:0px;
-	
+	resize:none;
 	height:90%;
+	border:none;
 	}
 
 .hidden {
@@ -93,19 +104,26 @@ main {
 	}
 aside.savings {
 	/*width:400px;*/
-	background:rgba(0,0,0,0.10);
+	
+	background:#5D5D5D;
 	position:absolute;
 	top:0;
-	right:-220px;
-	z-index:999;
-	transition:all 0.3s linear;
+	left:-100vw;
+	/*right:-220px;*/
+	z-index:10001;
+	/*transition:all 0.3s linear;*/
+	width:100vw;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
 	
 }
 
 nav {
 	box-sizing:border-box;
 	height:auto;
-	width:auto;
+	width:30vw;
 	padding-left:10px;
 	padding-top:10px;
 	
@@ -117,16 +135,17 @@ nav {
 
 nav p {
 	padding:5px 0px 5px 30px;
-	margin-top:5px;
+	margin:5px 0 0 20px;
 }
 
 
 	
 .open {
 	position:absolute;
-	right:0px !important;
-	background:black !important;
-	transition:all 0.3s linear;
+	left:0px !important;
+	/*right:0px !important;*/
+	background:#5D5D5D !important;
+	/*transition:all 0s linear;*/
 }
 
 
@@ -137,13 +156,18 @@ nav p {
 	/*background:white;*/
 	padding:10px;
 	border-radius:3px 0 0 3px;
-
 	}
 
 #hanterasamlingar {
 	width:200px;
 	font-size:0.8em;
 	}
+
+#hanterasamlingar form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
 	
 #hanterasamlingleft {
 	border-radius: 0 3px 3px 0 ;
@@ -152,8 +176,7 @@ nav p {
 	}
 
 img {
-	width:50px;
-	height:50px;
+	width:34px;
 	color:red;
 	z-index:1000;
 }
@@ -163,27 +186,36 @@ img {
 }
 
 .iconsize {
-	font-size:2em;
-	color:#329fd8;
+	font-size:1em;
+	color:black;
 	}
 
 
 
 /*selects*/
 
+label {
+	color:white;
+	margin-top:15px;
+	text-transform:uppercase;
+}
+
 select{
 	padding:10px;
 	font-size:1.2em;
 	font-family: 'Fira Sans', sans-serif !important;
 	font-weight:300;
-	color:rgba(50, 159, 216, 1.0);
-	border:3px solid rgba(50, 159, 216, 1.0);
+	color:#5D5D5D;
+	border:3px solid #5D5D5D;
 	margin:0px;
-	margin-right:10px;
+	outline:0;
 	}
 
 /* mina knappar*/
 
+button:focus {
+	outline:0;
+}
 
 
 .floatleft {
@@ -207,8 +239,12 @@ select{
 	overflow:hidden;
 	border: 1px dotted rgba(226,226,226,0.4);
 	
-	
 	}
+
+.divknapp p {
+	overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 
 .buttonmaker {
 	border:1px dotted darkgrey;
@@ -216,8 +252,14 @@ select{
 	width:10%;
 	font-size:0.85em;
 	height:81px;
-	justify-content: flex-end;
-	align-content:center;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+}
+
+.buttonmaker p {
+	margin:0px;
 }
 	
 
@@ -225,6 +267,7 @@ select{
 .divknapp:hover {
 	background:rgba(243,238,238,1);
 	overflow:visible;
+	
 	
 	
 }
@@ -236,54 +279,64 @@ select{
 
 
  #copyButton {
-	background:rgba(255,255,255,.4);
-	-webkit-border-radius:10px;
-	border-radius:0px;
+	-webkit-border-radius:100px;
+	border-radius:100px;
 	border:none;
-	font-weight:300;
-	color:white;
-	float:right;
-	margin-top:10px;
+	font-weight:500;
+	position:absolute;
+	z-index:200;
+	bottom:40%;
+	right:30%;
+	width:40%;
+	
 	font-size:1.2em;
-	padding:10px;
+	padding: 10px 15px;
+	background:white;
+	color:#5D5D5D;
+	font-size:1.2em;
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top:50px;
+	
+
+}
+
+#clipboard {
+	margin-right:10px;
 }
 
 #eraseButton {
-	-webkit-border-radius:10px;
-	border-radius:0px;
-	border:none;
-	font-weight:300;
-	color:white;
+	-webkit-border-radius:100px;
+	border-radius:1000px;
 	float:right;
 	margin-top:10px;
-	font-size:1.2em;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+
 	}
 
  #copyButton:hover, #addPosButton:hover {
+	background:#5D5D5D;
 	color:white;
-	background:#45d89b;
+
 }
 
 #eraseButton:hover, #addKonstrButton:hover, #empty:hover {
 	color:white ;
-	background:#e65045;
+	background:#5D5D5D;;
 }
 
-#copyButton {
-	background:white;
-	color:#45d89b;
-	font-size:1.2em;
-}
+
+
 
 #eraseButton, #empty {
 	background:white;
-	border-radius:0px;
-	border:none;
-	font-weight:300;
-	color:#e65045;
-	padding:10px;
+	color:#5D5D5D;
 	font-size:1.2em;
-	border:1px dashed rgba(226,226,226,0.4);
+	border:none;
+	
 	}
 
 #empty {
@@ -292,6 +345,9 @@ select{
 	display:block;
 	float:right;
 	margin-bottom:10px;
+	display: flex;
+	justify-content:center;
+	align-items:center;
 	}	
 	
 .eraseThis {
@@ -313,7 +369,7 @@ select{
 
 .save, .load {
 	float:left;
-	background:black;
+	background:#5D5D5D;
 	border-radius:0px;
 	border:none;
 	font-weight:400;
@@ -321,7 +377,7 @@ select{
 	font-size:1.2em;
 	padding:10px;
 	border:1px solid #ffffff;
-	margin-top:10px;
+	margin-top:25px;
 	
 	}
 	
@@ -343,7 +399,7 @@ select{
 
 #op {
 	width:100%;
-	min-height:100px;
+	min-height:200px;
 	background:rgba(226,226,226,0.4);
 	display:block;
 	border:black 1px solid;
@@ -358,6 +414,13 @@ select{
 	margin-top:80px;
 	position:relative;
 }
+
+#opp {
+	outline: none;
+	width:100%;
+	height:100%;
+}
+
 
 
 #extraop{
@@ -429,6 +492,26 @@ select{
 	-o-animation:bluetutorial 5s 5s linear;
 	animation:bluetutorial 5s 5s linear;
 	}
+
+
+/*ICONER*/
+
+.fa-floppy-o, .fa-bars {
+color:#5D5D5D;
+
+}
+
+.icon_bg {
+	border-radius: 200px;
+	background:white;
+	width:40px;
+	height:40px;
+	float:left;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
 		
 /* Guide animation + media queries*/
 

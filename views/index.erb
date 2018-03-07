@@ -1,6 +1,7 @@
 <aside class="savings">
     <section id="hanterasamlingar">
         <form method="GET" action="/comments/?">
+        <label for="course_id">Kurs</label>
             
             <select id="course_select" name="course-select">
             <% i = 0 %>
@@ -9,8 +10,8 @@
             <% i += 1 %>
             <% end %>
             </select>
-
-            <select id="collection_select" name="collection-select">
+            <label for="collection_select">Samling</label>
+            <select size="5" id="collection_select" name="collection-select">
             
         
 
@@ -20,14 +21,17 @@
             <button id="clicker" class="save">Spara samling</button>
         </form>
     </section>
-<nav><i class="fa fa-floppy-o iconsize relpos"></i><p>webtools / fast forward</p></nav>
+<nav><div class="icon_bg"><i class="fa fa-bars iconsize relpos"></i></div><p>Webtools / Fast Forward</p></nav>
     
 </aside>
 
 <main>
 <!--popup-->
 <div id="popup" class="hidden">
+    
     <section id="hanterasamlingleft">
+        <img src="/img/noun_317769_cc.svg" alt="close" id="killpopup">
+    
         <form id="mittForm" onsubmit="return false"> <!-- Mitt formulär -->
           <textarea id="kommentarsinput" type="text" value="Skriv din kommentar här" onfocus="this.value='';"></textarea>
           <input id="addPosButton" class="buttonSize" type="button" value="Ny knapp">
@@ -37,6 +41,7 @@
 </div>
 
     <output id="op">
+    <button id="copyButton" class="buttonSize" onclick="myCopyFunction()"><img id="clipboard" src="/img/noun_1243619_cc.svg" class="iconsize">KOPIERA TILL URKLIPP</button>
         <!--<h1 class="guide_two">Här skapas din textmassa.</h1>-->
         <%#comments = ""%>
         <%#if !comments%>
@@ -44,18 +49,19 @@
             <%#else%>
             <%#= comments%>
         <%#end%>
-            <p id="opp"></p>
+            <!--<p id="opp"></p>-->
+            <textarea id="opp"></textarea>
     </output>
     
-    <button id="copyButton" class="buttonSize">Kopiera text</button>
-    <button id="eraseButton" class="buttonSize">Ta bort text</button>
+    
+    <button id="eraseButton" class="icon_bg"><img src="/img/noun_1399669_cc.svg" class="iconsize"></button>
 
     <section id="spaceforbuttons">
         <!--<h1 class="guide_one"><i class="fa fa-hand-o-up fa-4 digleft"></i>Skapa egna kommentarsknappar!</h1>-->
         <!--<h1 class="guide_one_right">...eller ladda samling.<i class="fa fa-hand-o-up fa-4 digright"></i></h1>-->
         <!--Iterera igenom nya knappar med classer a la javascript. Färgen måste komma med också... -->
         
-        <div class="divknapp buttonmaker"><p>Ny kommentar</p></div>
+        <div class="divknapp buttonmaker"><img id="plusicon" src="/img/noun_107257_cc.svg" alt="plus" id="killpopup"><p>Ny kommentar</p></div>
 
 
 
@@ -71,8 +77,9 @@
         <% end %>
     </section>
     
-    <input id="empty" class="buttonSize" type="button" value="Rensa knappar">
-    
+    <!--<input id="empty" class="buttonSize" type="button" value="Rensa knappar">-->
+    <!--<input id="empty" class="buttonSize icon_bg" type="button" value="Rensa knappar">-->
+    <button id="empty" class="icon_bg"><img src="/img/noun_1399669_cc.svg" class="iconsize"></button>
     
       
 </main>

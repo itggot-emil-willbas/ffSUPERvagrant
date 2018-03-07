@@ -1,4 +1,14 @@
-
+// Todo: Få detta script att ta mer en sista textnoden. Verka funka bäst i formulär, ej paragrafer...
+function myCopyFunction() {
+    var copyText = document.getElementById("opp");
+    alert("Du klickade");
+    copyText.select();
+    console.log("InnerHTML:" + copyText.innerHTML);
+    console.log("CopyText:" + copyText.textContent);
+    console.log("InnerText:" + copyText.innerText);
+    document.execCommand("Copy");
+    alert("Du har kopierat texten: " + copyText);
+  }
 
 $(document).ready(function() {
 
@@ -50,8 +60,8 @@ populate_select();
     });
 
 //Toogle popup(comments)
-$(document).on('click', '.buttonmaker, #addPosButton, #addKonstrButton', function(){
-	$("#popup").toggleClass('hidden');
+$(document).on('click', '.buttonmaker, #addPosButton, #addKonstrButton, #killpopup', function(){
+	$("#popup,#copyButton").toggleClass('hidden');
 	});
 
 
@@ -86,8 +96,9 @@ $('#eraseButton').click(function() {
     $('#opp').empty();
 });
 
-$('#empty').click(function() {	
-    $('.divknapp').remove();
+//Reomove buttons but first
+$('button#empty').click(function() {	
+    $('#spaceforbuttons > .divknapp:not(:first-child)').remove();
 });
 
 //JSON test. Tänk på att varna om det redan finns ett collectionname med samma namn
@@ -155,18 +166,23 @@ $("#clicker").click(function(){
 /* Knappar */
 $("#spaceforbuttons").on("click",".divknapp",function(event){
     
-    if (!$(event.target).is('.eraseThis')){	
+    if (!$(event.target).is('.eraseThis,.buttonmaker')){	
         var flyttext = $(this).text() + " ";
         $('#opp').append(flyttext);
     }
 });	
-
+/*
 $('#copyButton').click(function(e) {
     console.log(e);
     var hejhej = $('#opp').text();
     window.prompt("Copy to clipboard: Ctrl + C, Enter",hejhej);
 
 });
+*/
+document.getElementById("opp").contentEditable = true;
+
+
+  
 
 
 
